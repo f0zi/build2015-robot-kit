@@ -216,16 +216,16 @@ namespace RobotApp
                     rightPwmPin = gpioController.OpenPin(RIGHT_PWM_PIN);
                     rightPwmPin.SetDriveMode(GpioPinDriveMode.Output);
 
-                    statusLedPin = gpioController.OpenPin(ACT_LED_PIN);
-                    statusLedPin.SetDriveMode(GpioPinDriveMode.Output);
-                    statusLedPin.Write(GpioPinValue.Low);
+                    //statusLedPin = gpioController.OpenPin(ACT_LED_PIN);
+                    //statusLedPin.SetDriveMode(GpioPinDriveMode.Output);
+                    //statusLedPin.Write(GpioPinValue.Low);
 
                     sensorPin = gpioController.OpenPin(SENSOR_PIN);
                     sensorPin.SetDriveMode(GpioPinDriveMode.Input);
                     sensorPin.ValueChanged += (s, e) =>
                     {
                         GpioPinValue pinValue = sensorPin.Read();
-                        statusLedPin.Write(pinValue);
+                        //statusLedPin.Write(pinValue);
                         isBlockSensed = (e.Edge == GpioPinEdge.RisingEdge);
                     };
 
